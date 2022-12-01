@@ -1,0 +1,18 @@
+$너비:600px;
+.boxWrap{
+
+    div{
+        background: pink;
+        margin: 10px;
+
+        &:first-child{
+            width: $너비 / 2;
+        }
+        &:nth-child(2){
+            width: (1000px / 2);
+        }
+        &:last-child{
+            width: 1200px / 2 +200px;
+        }
+    }
+}

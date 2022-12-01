@@ -1,0 +1,6 @@
+.bg-pink {
+  background-color: pink;
+}
+.bg-pink h2 {
+  border-bottom: 2px solid pink;
+}

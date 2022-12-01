@@ -1,0 +1,19 @@
+header{
+    h1{
+        font-size: 60px;
+        a{
+            color: green;
+        }
+    }
+    #nav{
+        display:flex;
+        justify-content: center;
+        li{
+            margin: 20px 60px;
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}

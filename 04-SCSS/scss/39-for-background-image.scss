@@ -1,0 +1,21 @@
+@import "common-1";
+
+.itemWrap{
+    li{
+        width: 300px;
+        height: 300px;
+        a{
+            display: block;
+            height: 100%;
+            background-size: 100%;
+        }
+
+        @for $i from 1 through 8{
+            &:nth-child(#{$i}){
+                a{
+                    background-image: url(../images/item#{$i}.jpg);
+                }
+            }
+        }
+    }
+}

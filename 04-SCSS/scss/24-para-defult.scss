@@ -1,0 +1,16 @@
+@mixin  myborder($두께:2px, $색상:green) {
+    border: $두께 solid $색상;    
+}
+
+h1{
+    @include myborder(5px, red);
+}
+p{
+    @include myborder();
+}
+div{
+    @include myborder(10px, pink);
+}
+span{
+    @include myborder();
+}

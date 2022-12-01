@@ -1,0 +1,16 @@
+.box1{
+    padding: 20px;
+    color: hotpink;
+    border: 1px solid black;
+    font-size: 25px;
+}
+
+.box2{
+    @extend .box1;
+    background: green;
+}
+
+.box3{
+    @extend .box1;
+    background: blue;
+}

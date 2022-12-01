@@ -1,0 +1,18 @@
+.boxWrap div {
+  background-color: aliceblue;
+  margin: 10px;
+}
+.boxWrap div.box1 {
+  width: 600px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  height: 100px;
+}
+.boxWrap div.box2 {
+  width: 300px;
+  left: 30px;
+  top: 50px;
+  position: fixed;
+  height: 100;
+}

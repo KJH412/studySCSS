@@ -1,0 +1,14 @@
+.box1{
+    color: green;
+    background-color: aliceblue;
+}
+.box2{
+    @extend .box1;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.box3{
+    @extend .box2;
+    text-decoration: underline;
+}

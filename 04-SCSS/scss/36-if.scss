@@ -1,0 +1,13 @@
+$너비:1200px;
+
+.box{
+    height: 200px;
+    @if($너비>=600){
+        width: $너비;
+        background: pink;
+    }
+    @else{
+        width: 100%;
+        background-color: skyblue;
+    }
+}

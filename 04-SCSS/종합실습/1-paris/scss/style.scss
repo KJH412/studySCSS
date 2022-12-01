@@ -1,0 +1,596 @@
+//색상 변수
+$mianColor: #023586;
+$textColor: #111;
+$linkColor: #4a4a4a;
+$moreColor: #888;
+
+//글자크기변수
+$fontSize: 14px;
+$titleSize: 24px;
+
+//해상도 변수
+$pcWidth: 1420px;
+$ipadWidth: 1260px;
+$mWidth767: 767px;
+$mWidth480: 480px;
+
+//position mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $p;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin bgGradient($h: 100%) {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $h;
+    transition: 0.5s;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    /* IE6-9 */
+
+}
+
+@mixin flexWrap($align: space-between) {
+    display: flex;
+    justify-content: $align;
+    flex-wrap: wrap;
+}
+
+@mixin mScreen($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
+
+//
+.innerBox {
+    max-width: $pcWidth;
+    margin: 0 auto;
+    // background-color: rgba(255, 0, 0, 0.3);
+
+    @include pos($p: relative);
+
+    @include mScreen($ipadWidth) {
+        max-width: 95%;
+    }
+}
+
+//header
+header {
+    background: $mianColor;
+    padding: 35px 0;
+
+    .logo {
+        text-align: center;
+
+        a {
+            position: relative;
+            z-index: 100;
+        }
+    }
+
+    #nav {
+        @include pos($top: 0px);
+        width: 100%;
+        @include flexWrap();
+
+        ul {
+            @include mScreen($ipadWidth) {
+                display: none;
+            }
+
+            @include flexWrap();
+            column-gap: 20px;
+
+            >li {
+                >a {
+                    color: white;
+                }
+
+                .subWrap {
+                    z-index: 100;
+                    width: 560px;
+                    background: white;
+                    @include pos($top:30px);
+                    @include flexWrap();
+                    padding: 20px;
+                    //위에 display:flex있어서 아래에 써주기.
+                    display: none;
+
+                    ul {
+                        width: 60%;
+
+                        li {
+                            //단위가 다르면 calc
+                            width: calc(50% - 20px);
+
+                            a {
+                                color: $linkColor;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .subWrap {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .rightNav {
+            @include flexWrap();
+
+            i {
+                color: white;
+                margin-left: 25px;
+            }
+        }
+
+        .hamBtn {
+            display: none;
+            @include pos($right: 0);
+
+            @include mScreen($ipadWidth) {
+                display: block;
+            }
+
+            a {
+                span {
+                    display: block;
+                    width: 32px;
+                    height: 2px;
+                    background: white;
+                    margin: 0 0 6px;
+                }
+            }
+        }
+
+    }
+
+    .mNav {
+        display: none;
+
+        @include mScreen($ipadWidth) {
+            // display: block;
+        }
+
+        background: rgba(0, 0, 0, 0.65);
+        @include pos($p: fixed, $top: 0, $left: 0);
+        width: 100%;
+        height: 100vh;
+        ;
+
+        .bg {
+            width: 280px;
+            height: 100%;
+            background: white;
+
+            >* {
+                border-bottom: 1px solid #eee;
+                padding: 20px;
+                line-height: 2;
+            }
+
+            .close {}
+
+            .leftNav {
+                .subWrap {
+                    text-indent: 20px;
+                    display: none;
+                }
+            }
+
+            .rightNav {}
+
+            .snsWrap {
+                ul {
+                    @include flexWrap();
+                    justify-content: flex-start;
+
+                    li {
+                        width: 46px;
+                        height: 46px;
+                        margin-right: 10px;
+
+                        a {
+                            display: block;
+                            border: 1px solid $mianColor;
+                            border-radius: 50%;
+                            padding: 6px 0px 12px;
+                            height: 100%;
+                            box-sizing: border-box;
+                            text-align: center;
+
+                            img {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//mainBanner
+#mainBanner {
+    .banner {
+        @include flexWrap();
+        //나누기는 보여주는 개수! 3개가 보여지고 싶으면 나누기3
+        width: 100% * 4 / 3;
+
+        @include mScreen($mWidth767) {
+            width: 100% * 4 / 2;
+        }
+
+        @include mScreen($mWidth480) {
+            width: 100% * 4 / 1;
+        }
+
+        li {
+            width: 25%; //배너이미지 4개라서
+            position: relative;
+
+            a {
+                img {
+                    width: 100%;
+                }
+
+                &::after {
+                    @include bgGradient();
+                    @include pos($top: 0, $left: 0);
+                }
+
+                &:hover::after {
+                    background: none;
+                }
+            }
+        }
+    }
+
+    .pager {
+        padding: 20px 0;
+        @include flexWrap($align: center);
+        gap: 10px;
+
+        li {
+            a {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: #ccc;
+                border-radius: 50%;
+                text-indent: -99999px;
+
+                &.active {
+                    background: $mianColor;
+                }
+            }
+        }
+    }
+}
+
+//#container
+#container {
+    .innerBox {
+
+        //공통사항
+        section {
+            padding: 50px 0;
+            position: relative;
+            margin: 0 -12px;
+
+            .title {
+                font-family: "pbGothic", snas-serif;
+                font-size: $titleSize;
+                color: $textColor;
+                margin-bottom: 30px;
+                margin-left: 12px;
+
+                @include mScreen($mWidth480) {
+                    text-align: center;
+                }
+            }
+
+            ul {
+                @include flexWrap();
+                // margin: 0 -12px;
+
+                li {
+                    padding: 12px;
+                    box-sizing: border-box;
+
+                    //내가준width값(33%,50%)안에 박스사이징포함되도록!
+                    a {
+                        .imgBox {
+                            position: relative;
+
+                            &::after {
+                                @include bgGradient(0);
+                                @include pos($bottom: 0);
+                            }
+
+                            &:hover::after {
+                                height: 100%;
+                            }
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .textBox {
+                            padding: 0 25px 25px;
+                            box-sizing: border-box;
+                            word-break: keep-all;
+
+                            strong {
+                                font-family: "pbGothic", sans-serif;
+                                font-size: $titleSize;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .moreBtn {
+                @include pos($top: 50px, $right: 12px);
+                border-bottom: 2px solid $linkColor;
+            }
+
+            &.magazine {
+                ul {
+                    @include mScreen($ipadWidth) {
+                        width: calc(100% * 3 / 2);
+                    }
+
+                    @include mScreen($mWidth480) {
+                        width: calc(100% * 3 / 1);
+                    }
+
+                    li {
+                        position: relative;
+                        width: (100% / 3);
+
+                        .textBox {
+                            @include pos($bottom: 0);
+                            width: 100%;
+                            color: white;
+
+                            strong {
+                                font-size: 2em;
+                            }
+
+                            p {
+                                font-size: 1.25em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.story {
+                ul {
+                    li {
+                        @include mScreen($mWidth767) {
+                            width: 100%;
+                        }
+
+                        width: 50%;
+                        margin-bottom: 10px;
+
+                        a {
+                            @include flexWrap();
+
+                            div {
+                                width: 50%;
+
+                                &.textBox {
+                                    span {
+                                        display: block;
+                                        margin-bottom: 10px;
+                                        color: $mianColor;
+                                    }
+
+                                    strong {
+                                        @include mScreen($mWidth480) {
+                                            font-size: 1.2em;
+                                        }
+                                    }
+
+                                    p {
+                                        margin: 20px 0;
+
+                                        @include mScreen($mWidth480) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.promotion {
+                ul {
+                    width: 100% * 8 / 4;
+
+                    @include mScreen($ipadWidth) {
+                        width: calc(100% * 8 / 3);
+                    }
+
+                    @include mScreen($mWidth767) {
+                        width: calc(100% * 8 / 2);
+                    }
+
+                    @include mScreen($mWidth480) {
+                        width: 100% * 8 / 1;
+                    }
+
+                    li {
+                        width: (100% / 8);
+
+                        .imgBox {
+                            span {
+                                @include pos($top: 0, $left: 0);
+                                background: $mianColor;
+                                color: white;
+                                font-size: 0.7em;
+                                padding: 0px 10px;
+                            }
+                        }
+
+                        .textBox {
+                            padding: 0; //공통으로 줬던 padding삭제
+
+                            strong {
+                                display: block;
+                                font-size: 1em;
+                                margin: 10px 0; //block해줘야 적용됨.
+                            }
+
+                            span {
+                                display: block;
+                                font-size: 0.65em;
+                                color: $moreColor;
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//footer
+footer {
+    background-color: #454a56;
+    .footTop {
+        @include flexWrap();
+        padding: 70px 0;
+        strong{
+            color: white;
+            font-size: $titleSize;
+            margin-bottom: 20px;
+            display: block; //마진적용
+        }
+        .sitemap {
+            @include flexWrap();
+            li {
+                @include mScreen($ipadWidth){
+                    width: 50%;
+                    margin-right: 0;
+                }
+                margin-right: 100px;
+                line-height: 2;
+                a{
+                    color: white;
+                }               
+            }
+        }
+        .spc {
+            @include mScreen($ipadWidth){
+                width: 50%;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+            ul {
+                @include flexWrap($align:left);
+                li {                    
+                    margin-right: 10px;
+                    a {
+                        img {
+                            height: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .followWrap {   
+            @include mScreen($ipadWidth){
+                width: 50%;
+            }        
+            >ul {
+                @include flexWrap($align:left);
+                li {               
+                    width: 46px;
+                    height: 46px;
+                    margin-right: 10px;
+                    a {
+                        background: white;
+                        border-radius: 50%;
+                        display: block;
+                        padding: 12px 0;
+                        height: 100%;
+                        box-sizing: border-box;
+                        text-align: center;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            .select {
+                p {
+                    padding: 10px;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    margin-top: 20px;
+                    width: 170px;
+                    color: white;
+                    cursor: pointer;
+                }
+                ul {
+                   @include pos();
+                   display: none;                    
+                }
+            }
+        }
+    }
+
+    .footMenu {
+        ul {
+            @include flexWrap($align: center);
+            li {
+                border-right: 1px solid white;
+                line-height: 0.9;
+                padding: 0 10px;
+                &:last-child{
+                    border-right: none;
+                }
+                a {
+                    color: white;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+
+    .footBottom {
+        border-top: 1px solid $moreColor;
+        padding: 10px 0;
+        margin-top: 10px;
+        text-align: center;
+        border-top: 1px solid $moreColor;
+        color: $moreColor;       
+    }
+}

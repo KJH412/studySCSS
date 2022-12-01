@@ -1,0 +1,21 @@
+.headTop {
+  width: 1200px;
+  margin: 0 auto;
+}
+.headTop h1 {
+  text-align: center;
+}
+.headTop #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.headTop #nav > li {
+  margin: 20px;
+}
+.headTop #nav > li > a {
+  font-size: 30px;
+}
+.headTop #nav > li .sub {
+  position: absolute;
+}

@@ -1,0 +1,11 @@
+.box1 {
+  width: 800px;
+  height: 400px;
+  background: url(../images/banner01.jpg);
+}
+
+.box2 {
+  width: 600px;
+  height: 500px;
+  background: url(../images/icon_franchise.png) no-repeat, url(../images/banner02.jpg);
+}

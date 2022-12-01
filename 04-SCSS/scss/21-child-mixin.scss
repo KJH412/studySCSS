@@ -1,0 +1,19 @@
+//글자색, 글자크기, 두께
+//후손 span 밑줄,배경
+@mixin textDeco { 
+    color: green;
+    font-size: 30px;
+    font-weight: 900;
+
+    span{
+    text-decoration: underline;
+    background-color: aliceblue;
+    }
+}
+
+h1{
+    @include textDeco();
+}
+p{
+    @include textDeco();
+}

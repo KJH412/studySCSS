@@ -1,0 +1,28 @@
+//thWrap>div 100,200,300,400,500
+
+.thWrap{
+    div{
+        background: pink;
+        height: 50px;
+        margin: 10px;
+
+    }
+    @for $i from 1 through 5{
+        &:nth-child(#{$i}){
+            width: 100px*$i;
+        }
+    }
+}
+.toWrap{
+    div{
+        background: skyblue;
+        height: 500px;
+        margin: 10px;
+
+        @for $j from 1 to 5{
+            &.to#{$j}{
+                height: 20px*$j;
+            }
+        }
+    }
+}

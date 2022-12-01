@@ -1,0 +1,13 @@
+.boxWrap {
+  padding: 20px;
+  background-color: aliceblue;
+}
+.boxWrap .box-small {
+  font-size: 30px;
+}
+.boxWrap .box-middle {
+  font-size: 50px;
+}
+.boxWrap .box-big {
+  font-size: 60px;
+}

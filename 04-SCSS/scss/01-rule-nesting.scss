@@ -1,0 +1,19 @@
+.headTop{
+    width: 1200px;
+    margin: 0 auto;
+    h1{
+        text-align: center;
+    }
+    #nav{
+        display: flex;
+        >li{
+            margin: 20px;
+            >a{
+                font-size: 30px;
+            }
+            .sub{
+                position: absolute;
+            }
+        }
+    }
+}

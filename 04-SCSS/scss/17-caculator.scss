@@ -1,0 +1,23 @@
+.boxWrap{
+    div{
+        background: dodgerblue;
+        margin: 20px;
+
+        &.box1{
+            width: 200px + 300px;
+        }
+
+        &.box2{
+            width: 1000px - 200px;
+        }
+
+        &.box3{
+            width: 50px * 8;
+        }
+
+        &.box4{
+            // 나누기는 '/'단독으로 사용할 수 없다.
+            width: 1000px / 2;
+        }
+    }
+}

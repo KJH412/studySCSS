@@ -1,0 +1,8 @@
+@charset "UTF-8";
+header p::before {
+  content: "가을이 옵니다!";
+}
+
+footer p::after {
+  content: "가을동화";
+}

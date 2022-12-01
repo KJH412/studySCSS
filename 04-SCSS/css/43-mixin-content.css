@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: #eee;
+  height: 80px;
+}
+@media screen and (max-width: 767px) {
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: aliceblue;
+  }
+}
+
+#container {
+  background-color: green;
+  margin: 0 auto;
+  width: 1200px;
+}
+@media screen and (max-width: 767px) {
+  #container {
+    width: 100%;
+    background-color: skyblue;
+  }
+}

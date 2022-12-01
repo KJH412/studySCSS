@@ -1,0 +1,16 @@
+.boxWrap .box3, .boxWrap .box2, .boxWrap .box1 {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 30px;
+}
+
+.boxWrap .box1 {
+  background: gainsboro;
+}
+.boxWrap .box2 {
+  background-color: green;
+  font-style: 30px;
+}
+.boxWrap .box3 {
+  text-decoration: underline;
+}

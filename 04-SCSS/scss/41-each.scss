@@ -1,0 +1,24 @@
+@import "common-1";
+
+//배열
+$snsArr:(blog,facebook,instagram,twitter,youtube);
+
+.sns{
+    display: flex;
+
+    li{
+        a{
+            display: block;
+            width: 35px;
+            height: 35px;
+        }
+
+        @each $i in $snsArr {
+            &.#{$i}{
+                a{
+                    background-image: url(../images/icon_#{$i}.png);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+h1 {
+  font: 50px/100px "돋음";
+  font-weight: 100;
+  font-style: italic;
+  background-color: pink;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrap > div {
+  width: 300px;
+  height: 100px;
+  background: green;
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}

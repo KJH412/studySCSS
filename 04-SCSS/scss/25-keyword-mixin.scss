@@ -1,0 +1,28 @@
+@mixin myPos($p:absolute,$top:null,$right:null,$bottom:null,$left:null) {
+    position: $p;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin mySize($배경:pink,$너비:null,$높이:null) {
+    background: $배경;    
+    width: $너비;
+    height: $높이;
+}
+
+.wrap{
+    @include mySize(skyblue, 600px, 400px);
+    margin: 50px auto;
+    @include myPos($p:relative);
+
+    .box1{
+        @include myPos($top:100px, $left:300px);
+        @include mySize($너비:100px);
+    }
+    .box2{
+        @include myPos($p:fixed ,$right:100px ,$top:0);
+        @include mySize($배경:green, $높이:100px);
+    }
+}

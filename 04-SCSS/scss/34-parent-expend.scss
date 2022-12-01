@@ -1,0 +1,13 @@
+.boxWrap{
+    $부모:&;
+    border: 2px solid green;
+    padding: 10px 30px;
+    margin: 30px;
+
+    .box{
+        font-size: 20px;
+        border-radius: 60px;
+        background-color: greenyellow;
+        @extend #{$부모};
+    }
+}

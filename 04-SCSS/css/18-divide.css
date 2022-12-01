@@ -1,0 +1,13 @@
+.boxWrap div {
+  background: pink;
+  margin: 10px;
+}
+.boxWrap div:first-child {
+  width: 300px;
+}
+.boxWrap div:nth-child(2) {
+  width: 500px;
+}
+.boxWrap div:last-child {
+  width: 800px;
+}

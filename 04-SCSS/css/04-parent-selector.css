@@ -1,0 +1,22 @@
+header #nav {
+  background-color: #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+header #nav li {
+  margin: 0 100px;
+}
+header #nav li:last-child {
+  margin-right: 0;
+}
+header #nav li a {
+  font-size: 30px;
+  text-decoration: none;
+}
+header #nav li a:hover {
+  color: pink;
+}

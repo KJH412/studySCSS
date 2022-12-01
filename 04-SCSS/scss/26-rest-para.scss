@@ -1,0 +1,11 @@
+@mixin bg($width,$height,$bg...) {
+    width: $width;
+    height: $height;    
+    background: $bg;
+}
+.box1{
+    @include bg(800px, 400px, url(../images/banner01.jpg))
+}
+.box2{
+    @include bg(600px, 500px, url(../images/icon_franchise.png) no-repeat, url(../images/banner02.jpg));
+}

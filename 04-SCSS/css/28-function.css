@@ -1,0 +1,14 @@
+.boxWrap div {
+  height: 100px;
+  background-color: pink;
+  margin-bottom: 10px;
+}
+.boxWrap div.box1 {
+  width: 1200px;
+}
+.boxWrap div.box2 {
+  width: 600px;
+}
+.boxWrap div.box3 {
+  width: 400px;
+}

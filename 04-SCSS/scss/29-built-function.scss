@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "sass:math";
+$메인컬러:hotpink;
+
+.boxWrap{
+    div{
+        margin: 10px;
+        &.box1{
+            background: color.mix(red,blue);
+        }
+        &.box2{
+            background: color.scale($메인컬러,$lightness:80%);
+        }
+        &.box3{
+            background: color.mix(green,yellow);
+            width: math.percentage($number: 0.5);
+        }
+    }
+}

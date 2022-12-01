@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.quick {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.quick li {
+  width: 70px;
+  height: 70px;
+}
+.quick li a {
+  display: block;
+  height: 100%;
+  background-image: url(../images/icon_quickmenu.png);
+}
+.quick li:nth-child(1) a {
+  background-position: 0px 0;
+}
+.quick li:nth-child(2) a {
+  background-position: -70px 0;
+}
+.quick li:nth-child(3) a {
+  background-position: -140px 0;
+}
+.quick li:nth-child(4) a {
+  background-position: -210px 0;
+}

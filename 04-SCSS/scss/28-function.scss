@@ -1,0 +1,22 @@
+$화면크기:1200px;
+
+@function boxSize($size){
+    @return $화면크기/$size;
+}
+
+.boxWrap{
+    div{
+        height: 100px;
+        background-color: pink;
+        margin-bottom: 10px;
+        &.box1{
+            width: boxSize(1);
+        }
+        &.box2{
+            width: boxSize(2);
+        }
+        &.box3{
+            width: boxSize(3);
+        }
+    }
+}

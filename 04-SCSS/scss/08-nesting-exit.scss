@@ -1,0 +1,15 @@
+.boxWrap{
+    .list{
+        display: flex;
+        li{
+            margin: 20px 100px;
+            a{
+                color: green;
+
+                @at-root #wrap .box{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+header{
+    #nav{
+        background-color: #ddd;
+        display:flex;
+        justify-content: right;
+        li{
+            margin: 0 100px;
+            
+            &:last-child{
+                margin-right: 0;
+            }
+            a{
+                font-size: 30px;
+                text-decoration: none;
+                
+                &:hover{
+                    color: pink;
+                }
+
+            }
+        }
+    }
+}

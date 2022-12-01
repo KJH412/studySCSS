@@ -1,0 +1,14 @@
+.boxWrap .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.boxWrap .list li {
+  margin: 20px 100px;
+}
+.boxWrap .list li a {
+  color: green;
+}
+#wrap .box {
+  font-size: 30px;
+}

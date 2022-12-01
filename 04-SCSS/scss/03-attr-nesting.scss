@@ -1,0 +1,25 @@
+//h1 
+//font-style, font-weight, font-size/line-height font-family
+//font:
+h1{
+    //font:italic 100 50px/100px "돋움";
+    font: 50px/100px "돋음"{
+    weight:100;
+    style:italic;
+    }
+    background-color: pink;
+}
+.wrap{
+    display: flex;
+    >div{
+        width:300px;
+        height:100px;
+        background: green;
+        margin:{
+            top:20px;
+            right:50px;
+            bottom:30px;
+            left: 10px;
+        };
+    }
+}

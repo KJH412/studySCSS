@@ -1,0 +1,9 @@
+$color:pink;
+$pos:bottom;
+
+.bg-#{$color}{
+    background-color: $color;
+    h2{
+        border-#{$pos}: 2px solid $color;
+    }
+}

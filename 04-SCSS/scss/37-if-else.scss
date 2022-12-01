@@ -1,0 +1,27 @@
+//position absolute,fixed 이면 입력받은 
+//위치값을 모두사용, relative이면 left값을 너비로 사용
+@mixin boxPos($w,$h,$left,$top,$p:absolute){
+@if($p==absolute or $p == fixed){
+    width: if(unitless($w),#{$w}px,$w);
+    left: if(unitless($left),#{$left}px,$left);
+    top: if(unitless($top),#{$top}px,$top);
+}   
+@else{
+width: if(unitless($left),#{$left}px,$left);
+} 
+position: $p;
+height: if(unitless($h),#{$h},$h);
+
+}
+.boxWrap{
+    div{
+        background-color: aliceblue;
+        margin: 10px;
+        &.box1{
+            @include boxPos(600px, 100px, 0, 0);
+        }
+        &.box2{
+            @include boxPos(300, 100, 30, 50, fixed);
+        }
+    }
+}

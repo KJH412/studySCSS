@@ -1,0 +1,185 @@
+@import "common-1";
+
+//반응형 해상도
+$모바일767: 767px;
+$모바일480: 480px;
+
+@mixin respond($media) {
+    @media screen and (max-width:$media) {
+        @content;
+    }
+}
+
+.innerBox {
+    max-width: 1200px;
+    margin: 0 auto;
+    // background-color: aliceblue;
+    position: relative;
+
+    @include respond($모바일767) {
+        width: 95%;
+    }
+}
+
+//header
+header {
+    border-bottom: 2px solid hotpink;
+
+    .logo {
+        text-align: center;
+        padding: 20px 0;
+
+        @include respond($모바일767) {
+            text-align: left;
+        }
+    }
+
+    .gnb {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        display: flex;
+        gap: 10px;
+
+        @include respond($모바일767) {
+            display: none;
+        }
+    }
+
+    .ham {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        display: none;
+
+        @include respond($모바일767) {
+            display: block;
+        }
+    }
+
+    nav {
+        @include respond($모바일767) {
+            width: 70%;
+            height: 100vh;
+            background: #222;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 1000;
+        }
+
+        .mgnb {
+            display: none;
+            overflow: hidden;
+            background: #444;
+
+            @include respond($모바일767) {
+                display: block;
+            }
+
+            li {
+                float: left;
+                margin-left: 10px;
+
+                a {
+                    color: #ddd;
+                    display: block;
+                    line-height: 50px;
+                }
+            }
+        }
+
+        #nav {
+            display: flex;
+            justify-content: space-evenly;
+            line-height: 50px;
+
+            @include respond($모바일767) {
+                display: block;
+            }
+
+            li {
+                a {
+                    display: block;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                    @include respond($모바일767) {
+                        color: white;
+                        border-bottom: 1px solid #999;
+                        text-indent: 20px;
+                    }
+                }
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: -40px;
+            background: #222;
+            display: none;
+
+            @include respond($모바일767) {
+                display: block;
+            }
+
+            a {
+                display: block;
+                height: 40px;
+                width: 40px;
+                color: white;
+            }
+        }
+    }
+}
+
+//#mainBanner
+#mainBanner {
+    background-color: dodgerblue;
+    height: 480px;
+    font-size: 100px;
+    color: white;
+
+    @include respond($모바일767) {
+        height: 40vw;
+        font-size: 50px;
+    }
+}
+
+//#container
+#container {
+    section {
+        padding: 50px 0;
+        .boxWrap {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            >div {
+                width: 32%;
+                height: 200px;
+                background: pink;
+                @include respond($모바일767){
+                    height: 25vw;
+                }
+                @include respond($모바일480){
+                    width: 100%;
+                    height: 40vw;
+                    margin-bottom: 10px;
+                }
+            }
+        }      
+    }
+}
+
+//footer
+footer{
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    @include respond($모바일480){
+        text-align: left;
+    }
+}

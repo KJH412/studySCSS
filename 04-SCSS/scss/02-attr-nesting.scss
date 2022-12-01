@@ -1,0 +1,11 @@
+//글씨체, 글자크기, 두께, 스타일
+h1{
+    color: pink;
+    background: #ccc;
+    font:{
+        family:"돋움";
+        size: 100px;
+        weight: 100;
+        style: italic;
+    }
+}

@@ -1,0 +1,16 @@
+.boxWrap div {
+  background: dodgerblue;
+  margin: 20px;
+}
+.boxWrap div.box1 {
+  width: 500px;
+}
+.boxWrap div.box2 {
+  width: 800px;
+}
+.boxWrap div.box3 {
+  width: 400px;
+}
+.boxWrap div.box4 {
+  width: 1000px/2;
+}

@@ -1,0 +1,15 @@
+$cont:"hi~~~~";
+$cont:"가을이 옵니다!";
+$cont:"단풍구경가자" !default;
+header{
+    p::before{
+        content:$cont;
+    }
+}
+$cont: null;
+$cont:"가을동화" !default;
+footer{
+    p::after{
+        content: $cont;
+    }
+}

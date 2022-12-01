@@ -1,0 +1,24 @@
+//전역변수 만들기
+$메인컬러:green;
+$메인글자색:#333;
+$제목:30px;
+
+header{
+    border-bottom: 2px solid $메인컬러;
+    #nav{
+        li{
+            a{
+                color: $메인글자색;
+
+                &:hover{
+                    color: $메인컬러;
+                }
+            }
+        }
+    }
+}
+#container{
+    h2{
+        font-size: $제목;
+    }
+}

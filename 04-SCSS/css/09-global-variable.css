@@ -1,0 +1,13 @@
+header {
+  border-bottom: 2px solid green;
+}
+header #nav li a {
+  color: #333;
+}
+header #nav li a:hover {
+  color: green;
+}
+
+#container h2 {
+  font-size: 30px;
+}

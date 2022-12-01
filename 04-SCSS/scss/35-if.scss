@@ -1,0 +1,4 @@
+$너비:1200;
+div{
+    background: if($너비>600,pink,skyblue);
+}

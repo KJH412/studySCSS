@@ -1,0 +1,15 @@
+header {
+  width: 1000px;
+  height: 100px;
+  background-color: aliceblue;
+}
+
+#container section {
+  height: 350px;
+  background-color: pink;
+}
+
+footer {
+  height: 100px;
+  background-color: skyblue;
+}

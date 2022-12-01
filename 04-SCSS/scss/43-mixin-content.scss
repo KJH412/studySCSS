@@ -1,0 +1,28 @@
+@import "common-1";
+
+@mixin reScreen{
+    @media screen and (max-width:767px) {
+        @content;
+    }
+}
+
+header{
+    background-color: #eee;
+    height: 80px;
+
+    @include reScreen{
+        position: fixed;
+        width: 100%;
+        background-color: aliceblue;
+    }
+}
+#container{
+    background-color: green;
+    margin: 0 auto;
+    width: 1200px;
+
+    @include reScreen{
+        width: 100%;
+        background-color: skyblue;
+    }
+}

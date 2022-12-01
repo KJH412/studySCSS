@@ -1,0 +1,17 @@
+.list{
+    li{
+        list-style: none;
+        a{
+            color: hotpink;
+            text-decoration: none;
+
+            &:hover{
+                color: skyblue;
+            }
+
+            .wrap &{
+                background-color: antiquewhite;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+//공통사항 선언
+%btn{
+    border: 1px solid black;
+    padding: 20px;
+    margin: 30px;
+}
+.boxWrap{
+    .box1{
+        @extend %btn;
+        background: gainsboro;
+    }
+    .box2{
+        @extend %btn;
+        background-color: green;
+        font-style: 30px;
+    }
+    .box3{
+        @extend %btn;
+        text-decoration: underline;
+    }
+}

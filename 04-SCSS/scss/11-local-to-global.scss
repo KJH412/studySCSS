@@ -1,0 +1,12 @@
+//메인컬러
+$mainColor:pink;
+span{
+    color:$mainColor;
+}
+h1{
+    $mainColor:green !global;
+    color: $mainColor;
+}
+p{
+    color: $mainColor;
+}

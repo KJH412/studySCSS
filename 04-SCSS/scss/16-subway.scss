@@ -1,0 +1,159 @@
+//변수선언
+//메인컬러,서브컬러,메인글자,링크글자,모서리
+$메인컬러: #009223;
+$서브컬러: #ffce32;
+$메인글자: #292929;
+$링크글자: #333;
+$모서리: 30px;
+
+//기본레이아웃
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $링크글자;
+}
+
+.blind {
+    position: absolute;
+    top: -999999px;
+}
+
+body {
+    font: {
+        family: "Noto Sans KR", san-serif;
+        size: 14px;
+        weight: normal;
+    }
+}
+
+.innerBox {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 0, 0, 0.3);
+    position: relative;
+}
+
+//header
+header {
+    border-top: 5px solid $메인컬러;
+    padding-top: $모서리;
+    text-align: center;
+
+    #nav {
+        display: flex;
+        justify-content: center;
+
+        >li {
+            margin: 30px 50px;
+
+            >a {
+                display: block;
+
+                font: {
+                    size: 1.3em;
+                    weight: 500;
+                }
+
+                color:$메인글자;
+
+                &:hover {
+                    color: $메인컬러;
+                }
+            }
+        }
+    }
+}
+
+//#mainBanner
+#mainBanner {
+    .btn {
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+
+        li {
+            float: left;
+            margin: 10px;
+
+            a {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: white;
+                border-radius: 10px;
+                text-indent: -9999px;
+            }
+
+            &.active {
+                a {
+                    background: $서브컬러;
+                    width: $모서리;
+                }
+            }
+        }
+    }
+}
+
+//#container
+#container {
+    .quickWrap {
+        top: -40px;
+
+        .quick {
+            display: flex;
+            justify-content: end;
+
+            >div {
+
+                a {
+                    display: block;
+                    width: 300px;
+                    height: 80px;
+
+                    font: {
+                        size: 1.8em;
+                        weight: bold;
+                    }
+
+                    text-align: center;
+                    background-repeat: no-repeat;
+                    line-height: 80px;
+                }
+
+                &.store {
+                    a {
+                        background: {
+                            color: $서브컬러;
+                            image: url(../images/icon_map.png);
+                            position: 50px center;
+                        }
+
+                        border-radius: $모서리 0 0 0;
+                    }
+                }
+
+                &.franchise {
+                    a {
+                        background: {
+                            color: $메인컬러;
+                            image: url(../images/icon_franchise.png);
+                            position: 35px center;
+                        }
+
+                        color:white;
+                        border-radius: 0 0 $모서리 0;
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@mixin myfont($글씨체:sans-self,$크기:20px,$두께:bold,$스타일:normal){
+    font:{
+        family:$글씨체;
+        size: $크기;
+        weight:$두께;
+        style:$스타일;
+    }
+}
+
+//h1 궁서,40,100,italic
+h1{
+    $fontValue:"궁서",40px,100,italic;
+    @include myfont($fontValue...);
+}
+//div 12px,400 나머지는 기본
+div{
+    $fontValue:(크기:12px,두께:400);
+    @include myfont($fontValue...);
+}

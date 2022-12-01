@@ -1,0 +1,15 @@
+h1 {
+  border: 1px solid green;
+  background-color: aliceblue;
+  font-size: 25px;
+  color: white;
+  text-decoration: underline;
+}
+
+span {
+  font-style: italic;
+  background-color: bisque;
+  font-size: 25px;
+  color: white;
+  text-decoration: underline;
+}

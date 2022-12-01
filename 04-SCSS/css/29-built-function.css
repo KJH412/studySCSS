@@ -1,0 +1,13 @@
+.boxWrap div {
+  margin: 10px;
+}
+.boxWrap div.box1 {
+  background: purple;
+}
+.boxWrap div.box2 {
+  background: #ffe1f0;
+}
+.boxWrap div.box3 {
+  background: #80c000;
+  width: 50%;
+}
